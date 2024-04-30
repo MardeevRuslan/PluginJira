@@ -7,7 +7,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <organization>
         <name>Inly It</name>
-        <url>http://deweloper.inlyit.com</url>
+        <url>https://inlyit.com/</url>
     </organization>
     <name>myPlugin</name>
     <description>This is the inlyit.mardeev.plugin:myPlugin plugin for Atlassian JIRA.</description>

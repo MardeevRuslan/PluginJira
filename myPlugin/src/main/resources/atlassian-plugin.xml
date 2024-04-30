@@ -16,12 +16,34 @@
         <resource type="download" name="myPlugin.css" location="/css/myPlugin.css"/>
         <resource type="download" name="myPlugin.js" location="/js/myPlugin.js"/>
         <resource type="download" name="images/" location="/images"/>
+        <resource type="download" name="login-page.html" location="/html/login-page.html"/>
+        <resource type="download" name="login.html" location="/html/login.html"/>
+        <resource type="download" name="task.html" location="/html/task.html"/>
         <context>myPlugin</context>
     </web-resource>
+
     <web-item name="Plagin" i18n-name-key="Plagin.name" key="Plagin" section="system.top.navigation.bar" weight="47">
         <description key="Plagin.description">Моя страница</description>
-        <label key="Плагин"/>
-        <link linkId="Plagin-link" url="/jira/plugins/servlet/database-console/login.do"></link>
+        <label key="Plagin"/>
+        <link linkId="Plagin-link">/task</link>
     </web-item>
+    <web-item name="Plagin1" i18n-name-key="Plagin1.name" key="Plagin1" section="system.top.navigation.bar" weight="47">
+        <label key="Plagin1"/>
+        <link linkId="Plagin-link1">/login-page</link>
+    </web-item>
+    <web-item name="Plagin11" i18n-name-key="Plagin11.name" key="Plagin11" section="system.top.navigation.bar" weight="47">
+        <label key="Plagin11"/>
+        <link linkId="Plagin-link11">/login</link>
+    </web-item>
+
+
+    <!-- publish our component -->
+    <servlet name="Task" class="inlyit.mardeev.plugin.myPlugin.impl.MyPluginServlet" key="task">
+        <url-pattern>/task</url-pattern>
+    </servlet>
+
+    <servlet name="Login" class="inlyit.mardeev.plugin.myPlugin.impl.LoginServlet" key="login">
+        <url-pattern>/login</url-pattern>
+    </servlet>
 
 </atlassian-plugin>
