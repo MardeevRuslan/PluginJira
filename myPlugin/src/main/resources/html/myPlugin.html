@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Tasks</title>
+    <script>
+        function sortTable(columnIndex) {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById('taskTable');
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName('td')[columnIndex];
+                    y = rows[i + 1].getElementsByTagName('td')[columnIndex];
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
+            }
+        }
+    </script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+        th:hover {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Open Tasks</h1>
+<label for="rowCount">Number of Rows:</label>
+<select id="rowCount">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="20">20</option>
+</select>
+<table id="taskTable">
+    <tr>
+        <th onclick="sortTable(0)">Issue Key</th>
+        <th onclick="sortTable(1)">Summary</th>
+        <th onclick="sortTable(2)">Reporter</th>
+        <th onclick="sortTable(3)">Due Date</th>
+    </tr>
+    <!-- Table rows will be added dynamically using JavaScript -->
+</table>
+<script>
+    // JavaScript code to fetch and populate table rows goes here
+</script>
+</body>
+</html>
