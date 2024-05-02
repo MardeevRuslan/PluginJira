@@ -16,6 +16,6 @@ The user can sort the table by clicking on any of the column headers.
 
 To install PluginJira, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/PluginJira.git`
+1. Clone the repository: `git clone` [ https://github.com/MardeevRuslan/PluginJira.git](https://github.com/MardeevRuslan/PluginJira)
 2. Navigate to the project directory: `cd PluginJira/myPlugin`
 3. Build and run the plugin: `atlas-run`
